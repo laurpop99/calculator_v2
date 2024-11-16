@@ -1,5 +1,6 @@
 * {
     background-color: rgb(210, 205, 199);
+    box-sizing: border-box;
 }
 
 .header h1{
@@ -17,7 +18,7 @@
 }
 
 .calculator {
-    width: 300px;
+    width: 350px;
     height: 500px;
     background-color: rgb(100, 98, 96);
     border-radius: 50px;
@@ -28,7 +29,7 @@
 }
 
 .calculator-display {
-    width: 245px;
+    width: 300px;
     height: 45px;
     background-color: white;
     border-radius: 10px;
@@ -37,9 +38,9 @@
 }
 
 .calculator-keys {
-    width: 240px;
+    width: 300px;
     padding: 10px;
-    height: 350px;
+    height: 400px;
     background-color: white;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -50,19 +51,82 @@
 }
 
 .calculator-keys-top {
-    height: 50px;
-    width: 250px;
-    background-color: black;
+    height: 100px;
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
 }
+.calculator-keys-top button {
+    height: 80px;
+    width: 140px;
+    margin: 0;
+    padding: 0;
+    border-radius: 5%;
+    border: 1px solid black;
+}
+
 
 .calculator-keys-primary {
-    height: 350px;
-    width: 200px;
+    height: 300px;
+    width: 280px;
     background-color: rgb(196, 140, 140);
+    display: flex;
+    flex-direction: row;
+    
 }
 
-.calculator-keys-secondary {
-    height: 50px;
-    width: 250px;
-    background-color: black;
+.calculator-keys-primary-left {
+    box-sizing: border-box;
+    width: 210px;
+    height: 300px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+
 }
+
+.calculator-keys-primary-right {
+    box-sizing: border-box;
+    width: 70px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.calculator-keys-primary-left button {
+   width: 70px;
+   height: 75px;
+   border-radius: 5%;
+   border: 1px solid black;
+   margin: 0;
+   padding: 0;
+   display: inline-block;
+
+}
+
+
+.calculator-keys-primary-right button {
+    width: 70px;
+    height: 75px;
+    border-radius: 5%;
+    border: 1px solid black;
+    margin: 0;
+    padding: 0;
+
+ 
+ }
+
+ .display{
+    width: 290px;
+    display: inline-block;
+    font-size: 30px;
+    background-color: white;
+    font-weight: 800;
+    text-align: right;
+ }
+
