@@ -62,9 +62,21 @@ function pressKey(e){
     displayString += e.key;
     updateScreen();
     }
-    if(e.key === "+"){
-        assignOperation(e.key);
+    if(e.key === "+" || e.key === "*" || e.key === "-" || e.key === "/"){
+        assignOperationPress(e);
     }
+
+    if(e.key === "Enter"){
+       equalOperation();
+    }
+
+    if(e.key === "c" || e.key === "C"){
+        clearScreen();
+     }
+
+     if(e.key === "Backspace"){
+        clearKey();
+     }
 
 }
 
@@ -93,6 +105,40 @@ function assignOperation(){
     clearScreen();
 
     }
+}
+
+function assignOperationPress(e){
+    
+    if(previousAmount !== "")
+    {
+        if(operationPerformed !== e.key && e.key !== "/"){
+            currentAmount = displayString;
+            performOperation(operationPerformed, previousAmount, currentAmount);
+            operationPerformed = e.key;
+            console.log(operationPerformed);
+            previousAmount = displayString;
+            displayString = "";
+        }
+        else {
+        operationPerformed = e.key;
+        console.log(operationPerformed);
+        currentAmount = displayString;
+        performOperation(operationPerformed, previousAmount, currentAmount);
+        previousAmount = displayString;
+        displayString = "";
+        }
+    }
+    else {
+    previousAmount = displayString;
+    operationPerformed = e.key;
+    if(e.key === "/"){
+        operationPerformed = "÷";
+    }
+    console.log(operationPerformed);
+    clearScreen();
+
+    }
+
 }
 
 function performOperation(operation, previousAmount, currentAmount){
